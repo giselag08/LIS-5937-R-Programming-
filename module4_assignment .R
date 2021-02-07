@@ -1,0 +1,16 @@
+frequency <- c(.6, .3, .4, .4, .2, .6, .3, .4, .9, .2)
+bp <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+first <- c(1, 1, 1, 1, 0, 0, 0, 0, NA, 1)
+second <- c(0, 0, 1, 1, 0, 0, 1, 1, 1, 1)
+finalDecision <- c(0, 1, 0, 1, 0, 1, 0, 1, 1, 1)
+doctorData <- data.frame(frequency, bp, first, second, finalDecision)
+# Boxplots
+boxplot(frequency, main = "Frequency of Patient Visits", horizontal = TRUE)
+boxplot(bp, main = "BP of Patients", horizontal = TRUE)
+boxplot(frequency, bp, xlab= "Assessment", ylab= "Blood Pressure", main= "Test Results")
+# Histogram 
+hist(frequency, xlab= "Frequency", ylab= "Patients", main = "Frequency of Visits")
+hist(bp, xlab = "Measurement", ylab = "Assessments", main = "Results")
+hist(first, na.rm = TRUE, xlab = "Blood Pressure", ylab = "Patient", main = "First Assessment")
+hist(second, xlab = "Blood Pressure", ylab = "Patient", main = "Second Assessment")
+hist(finalDecision, xlab = "Immediate Care", ylab = "Patients", main = "Final Descision")
