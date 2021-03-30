@@ -1,0 +1,36 @@
+---
+title: "Module_12"
+author: "Gisela Gonzalez"
+date: "3/30/2021"
+output: word_document
+fontsize: 11pt
+geometry: margin = 1in
+runtime: shiny 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Markdown Practice 
+
+Hello, this is my *first experience with R markdown*.  If you're interested in learning more about R Markdown, please check out [link](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
+
+## Summary Data of mtcars data generate in R
+```{r data(mtcars)}
+summary(mtcars)
+```
+
+### Plot mtcars data
+
+Now that we have our data, it's time to try to create a **bar graph**!The bar graph will show the number of gear type in mtcars.
+```{r}
+geartype <- table(mtcars$gear)
+View(geartype)
+xval <- c("Type3", "type 4", "type 5")
+barplot(geartype, names.arg=xval, xlab="Gear Types", ylab="Total number of each type", col="red", main = "Distribution of Gear Types")
+```
+### Conclusion 
+Thanks for joining me on experimenting with R markdown. I've learned that:
+* R Markdown is a format used for writing reproducible, dynamic reports in R.
+* It is simple and fun to use. 
